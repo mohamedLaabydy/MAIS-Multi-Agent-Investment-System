@@ -12,6 +12,33 @@ The system relies on specialized autonomous agents:
 - **Strategic Agent**: Comparison based on investor objectives
 - **Decision Agent**: Consolidation and justified final decision
 
+## Structure du repo :
+```
+genetic-ai-investment-prototype/
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── rag_data/                 # PDFs, rapports, news
+│
+├── agents/
+│   ├── __init__.py
+│   ├── analyst_agent.py      # Récupère et résume données
+│   ├── risk_agent.py         # Calcule risques (Sharpe, volatilité, ESG)
+│   ├── strategy_agent.py     # Applique MCDA selon profil investisseur
+│   └── decision_agent.py     # Agrège + génère recommandation (LLM)
+│
+├── notebooks/
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_test_agents_locally.ipynb   # Pour tester chaque agent
+│   └── 03_full_simulation.ipynb       # Boucle multi-agents + consensus
+│
+├── app.py                    # Streamlit
+├── requirements.txt
+└── README.md
+
+```
+
 ## 🛠️ Tech Stack # coming soon
 
 - **Agent Framework**: CrewAI / LangGraph
